@@ -32,7 +32,7 @@ function App() {
     {
       sno: 1,
       title: "Quran",
-      desc: "Quran is the best book in the world"
+      desc: "Quran is the Holy book which has come for all Humanity from GOD"
     }
     ,
     {
