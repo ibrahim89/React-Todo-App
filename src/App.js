@@ -5,7 +5,11 @@ import Todos from './MyComponent/Todos';
 import Footer from './MyComponent/Footer';
 import NewTodo from './MyComponent/NewTodo';
 import React, { useState } from 'react';
-
+import Test  from './MyComponent/Test'
+import EventBind from './MyComponent/EventBind';
+import  ParentComponent  from './components/ParentComponent';
+import NameList from './components/NameList';
+import StudentDashboard from './components/StudentDashboard';
 function App() {
 
   // This is Delete Function
@@ -16,19 +20,20 @@ function App() {
   };
 
   // This is Add Function
-  const addTodo = (title, desc,value) => {
+  const addTodo = (title, desc) => {
     console.log(title, desc);
     let sno = todolist[todolist.length - 1].sno + 1;
     const myTodo = {
       sno: sno,
       title: title,
-      desc: desc,
-      value:value
+      desc: desc
+     
     }
+    
     setTodoList([...todolist, myTodo]);
     console.log(myTodo);
   }
-  const [todolist, setTodoList] = useState([
+   const [todolist, setTodoList] = useState([
     {
       sno: 1,
       title: "Quran",
@@ -51,12 +56,17 @@ function App() {
       desc: "Seerah is the Life story of Prophet Mohammad s.a.w"
     }
   ]);
+   
+  
+  
   return (
     <>
-      <Headers title="My To Dos List" searchBar={false} />
-      <NewTodo addTodo={addTodo} />
+      <Headers title="My To Dos List" searchBar={true} />
+      {/* <NewTodo addTodo={addTodo} />
       <Todos todos={todolist} onDelete={onDelete} />
-       <Footer />
+       <ParentComponent persons = {personList}/> */}
+      <StudentDashboard/>
+        <Footer />
     </>
 
 
